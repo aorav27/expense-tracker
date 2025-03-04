@@ -1,24 +1,27 @@
 from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel
 import sys
 
-# Create the application instance
-app = QApplication(sys.argv)
+class ExpenseTracker(QWidget):
+    def __init__(self):
+        super().__init__()
 
-# Create the main window
-window = QWidget()
-window.setWindowTitle("Expense Tracker")
-window.setGeometry(100, 100, 400, 300)
+        # Window properties
+        self.setWindowTitle("Expense Tracker")
+        self.setGeometry(100, 100, 400, 300)
 
-# Create a label and a button
-label = QLabel("Welcome to the Expense Tracker!", window)
-button = QPushButton("Click Me", window)
+        # Create UI components
+        self.label = QLabel("Welcome to the Expense Tracker!", self)
+        self.button = QPushButton("Click Me", self)
 
-# Set up layout
-layout = QVBoxLayout()
-layout.addWidget(label)
-layout.addWidget(button)
-window.setLayout(layout)
+        # Set up layout
+        layout = QVBoxLayout()
+        layout.addWidget(self.label)
+        layout.addWidget(self.button)
+        self.setLayout(layout)
 
-# Show the window
-window.show()
-sys.exit(app.exec())
+# Run the application
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = ExpenseTracker()
+    window.show()
+    sys.exit(app.exec())
