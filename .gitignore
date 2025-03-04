@@ -2,3 +2,5 @@ ExpenseTracker/expenses.csv
 ExpenseTracker/expenses.xlsx
 ExpenseTracker/expenses.csv
 *.csv
+ExpenseTracker/.idea/PythonProject.iml
+ExpenseTracker/.idea/misc.xml
